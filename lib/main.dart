@@ -1,4 +1,4 @@
-import 'package:cuisine_circle/screens/catagory_screen.dart';
+import 'package:cuisine_circle/widgets/tabs.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +12,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CategoryScreen(),
+      home: TabsScreen(),
     );
   }
 }
