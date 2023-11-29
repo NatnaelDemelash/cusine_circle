@@ -4,16 +4,24 @@ import 'package:flutter/material.dart';
 import '../model/meal.dart';
 
 class MealsScreen extends StatelessWidget {
-  const MealsScreen({super.key, required this.meals, this.title});
+  const MealsScreen(
+      {super.key,
+      required this.meals,
+      this.title,
+      required this.onToggleFavouriteMeal});
 
   final String? title;
   final List<Meal> meals;
+  final void Function(Meal meal) onToggleFavouriteMeal;
 
   @override
   Widget build(BuildContext context) {
     Widget content = ListView.builder(
       itemCount: meals.length,
-      itemBuilder: (ctx, indx) => MealItem(meal: meals[indx]),
+      itemBuilder: (ctx, indx) => MealItem(
+        meal: meals[indx],
+        onToggleFavouriteMeal: onToggleFavouriteMeal,
+      ),
     );
 
     // ignore: curly_braces_in_flow_control_structures
