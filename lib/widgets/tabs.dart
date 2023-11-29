@@ -1,5 +1,7 @@
+import 'package:cuisine_circle/screens/FilterScreen.dart';
 import 'package:cuisine_circle/screens/catagory_screen.dart';
 import 'package:cuisine_circle/screens/meals_screen.dart';
+import 'package:cuisine_circle/widgets/main_darwer.dart';
 import 'package:flutter/material.dart';
 
 import '../model/meal.dart';
@@ -41,6 +43,16 @@ class _TabsScreenState extends State<TabsScreen> {
     });
   }
 
+  void _selectScreen(String identifier) {
+    if (identifier == 'Filters') {
+      Navigator.of(context).pop();
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (ctx) => const FilterScreen()));
+    } else {
+      Navigator.of(context).pop();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget activePage = CategoryScreen(
@@ -57,11 +69,17 @@ class _TabsScreenState extends State<TabsScreen> {
     }
 
     return Scaffold(
+      backgroundColor: const Color.fromARGB(221, 49, 47, 47),
       appBar: AppBar(
         title: Text(activePageTitle),
+        elevation: 0,
+      ),
+      drawer: MainDrawer(
+        onSelectScreen: _selectScreen,
       ),
       body: activePage,
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color.fromARGB(221, 195, 186, 186),
         onTap: _onSelect,
         currentIndex: selectedPageIndex,
         items: const [

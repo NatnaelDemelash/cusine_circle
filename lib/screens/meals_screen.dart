@@ -33,12 +33,12 @@ class MealsScreen extends StatelessWidget {
           children: [
             Text(
               'Uh Oh....There is Nothing Here',
-              style: TextStyle(fontSize: 22),
+              style: TextStyle(fontSize: 22, color: Colors.white),
             ),
             SizedBox(height: 15),
             Text(
               'Try Selecting a different Category',
-              style: TextStyle(fontSize: 24),
+              style: TextStyle(fontSize: 24, color: Colors.white),
             )
           ],
         ),
@@ -48,6 +48,7 @@ class MealsScreen extends StatelessWidget {
       return content;
     }
     return Scaffold(
+      backgroundColor: const Color.fromARGB(221, 49, 47, 47),
       appBar: AppBar(
         title: Text(title!),
         elevation: 0,

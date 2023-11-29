@@ -11,6 +11,7 @@ class MealDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(221, 49, 47, 47),
       appBar: AppBar(
         title: Text(meal.title),
         elevation: 0,
@@ -47,9 +48,7 @@ class MealDetailsScreen extends StatelessWidget {
               Text(
                 ingredient,
                 style: const TextStyle(
-                  height: 1.8,
-                  fontSize: 17,
-                ),
+                    height: 1.8, fontSize: 17, color: Colors.white),
               ),
             const SizedBox(height: 20),
             const Text(
@@ -69,7 +68,9 @@ class MealDetailsScreen extends StatelessWidget {
                   step,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
-                      fontSize: 17, fontStyle: FontStyle.italic),
+                      fontSize: 17,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.white),
                 ),
               ),
           ],
